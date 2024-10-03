@@ -14,22 +14,20 @@
 (setq-default frame-title-format '("Emacs"))
 
 ;; simple mode-line
-
 ;; https://emacs.stackexchange.com/questions/5529/how-to-right-align-some-items-in-the-modeline
-(defun simple-mode-line-render (left right)
-  "Return a string of `window-width' length containing LEFT, and RIGHT
- aligned respectively."
-  (let* ((available-width (- (window-width) (length left) 2)))
-    (format (format " %%s %%%ds " available-width) left right)))
+;; (defun simple-mode-line-render (left right)
+;;   "Return a string of `window-width' length containing LEFT, and RIGHT aligned respectively."
+;;   (let* ((available-width (- (window-width) (length left) 2)))
+;;     (format (format " %%s %%%ds " available-width) left right)))
 
-(and (bound-and-true-p spartan-minimal-modeline)
-     (progn
-       (setq-default mode-line-format
-      '((:eval (simple-mode-line-render
-                ;; left
-                (format-mode-line "%* %b %l")
-                ;; right
-                (format-mode-line "%m")))))))
+;; (and (bound-and-true-p spartan-minimal-modeline)
+;;      (progn
+;;        (setq-default mode-line-format
+;;       '((:eval (simple-mode-line-render
+;;                 ;; left
+;;                 (format-mode-line "%* %b %l")
+;;                 ;; right
+;;                 (format-mode-line "%m")))))))
 
 ;; better scratch https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_its_utility/
 
